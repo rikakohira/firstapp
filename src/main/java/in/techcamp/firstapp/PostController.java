@@ -1,5 +1,6 @@
 package in.techcamp.firstapp;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 //PostControllerクラス
 public class PostController {
+    private final PostRepository postRepository;
     @GetMapping("/hello")
     //showHello()メソッド
     public String showHello(Model model){
@@ -20,11 +23,8 @@ public class PostController {
     @GetMapping
     //showList()メソッド
     public String showList(Model model){
-        var postList = List.of(
-                new PostEntity(1, "投稿1"),
-                new PostEntity(2, "投稿2"),
-                new PostEntity(3, "投稿3")
-        );
+        //findAll()メソッドでデータベースからデータを取得
+        var postList = postRepository.findAll();
         model.addAttribute("postList", postList);
         return "index";
     }
