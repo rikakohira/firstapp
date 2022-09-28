@@ -2,16 +2,11 @@ package in.techcamp.firstapp;
 
 import lombok.AllArgsConstructor;
 
+//コンストラクタを自動生成
 @AllArgsConstructor
 public class PostEntity {
     private long id;
     private String memo;
-
-    //コンストラクタ（リファクタリングによって削除）
-    //public PostEntity(long id, String memo) {
-        //this.id = id;
-        //this.memo = memo;
-    //}
 
     //ゲッター・セッター
     public long getId() {
