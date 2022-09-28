@@ -1,5 +1,6 @@
 package in.techcamp.firstapp;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,4 +12,7 @@ public interface PostRepository {
     @Select("select * from posts")
     //返り値のデータ型 findAll()メソッド
     List<PostEntity> findAll();
+
+    @Insert("insert into potsts (memo) values (#{memo})")
+    void insert(String memo);
 }
