@@ -10,9 +10,14 @@ public class PostController {
     @GetMapping("/hello")
     //showHello()メソッド
     public String showHello(Model model){
-        var sampleText = "サンプルテキスト"
+        var sampleText = "サンプルテキスト";
         model.addAttribute("sampleText", sampleText);
         //hello.htmlを呼び出し
         return "hello";
+    }
+    
+    @GetMapping
+    public String showList(){
+        return "index";
     }
 }
