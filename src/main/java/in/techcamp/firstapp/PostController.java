@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -21,6 +22,8 @@ public class PostController {
         //hello.htmlを呼び出し
         return "hello";
     }
+
+    //一覧機能
     @GetMapping
     //showList()メソッド
     public String showList(Model model){
@@ -29,9 +32,17 @@ public class PostController {
         model.addAttribute("postList", postList);
         return "index";
     }
+    //投稿機能
     @GetMapping("/postForm")
     //データを一時保管しビューで呼び出す
     public String showPostForm(@ModelAttribute("postForm") PostForm form){
         return "postForm";
+    }
+    //投稿を保存
+    @PostMapping("/posts")
+    public String savePost(PostForm form){
+        //SQLへのデータ保存
+        postRepository.insert(form.getMemo());
+        return "redirect:/";
     }
 }
