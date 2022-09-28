@@ -15,8 +15,8 @@ public class PostController {
         //hello.htmlを呼び出し
         return "hello";
     }
-    
     @GetMapping
+    //showList()メソッド
     public String showList(){
         return "index";
     }
