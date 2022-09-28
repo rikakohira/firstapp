@@ -25,7 +25,7 @@ public class PostController {
                 new PostEntity(2, "投稿2"),
                 new PostEntity(3, "投稿3")
         );
-        model.addAttribute("postList", postList)
+        model.addAttribute("postList", postList);
         return "index";
     }
 }
