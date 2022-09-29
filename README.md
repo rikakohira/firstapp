@@ -6,6 +6,7 @@
  
 - 投稿機能<br>
  テキストの投稿し、投稿後は一覧画面に遷移します。
+ 
  [![Image from Gyazo](https://i.gyazo.com/d1f0f033d07c8157e92d155976d16df1.gif)](https://gyazo.com/d1f0f033d07c8157e92d155976d16df1)
  
 # URL
