@@ -36,6 +36,7 @@ public class PostController {
     @GetMapping("/postForm")
     //データを一時保管しビューで呼び出す
     public String showPostForm(@ModelAttribute("postForm") PostForm form){
+
         return "postForm";
     }
     //投稿を保存
