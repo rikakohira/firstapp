@@ -25,7 +25,7 @@ public class PostController {
 
     //一覧機能
     @GetMapping
-    //showList()メソッド
+    //List()メソッド
     public String showList(Model model){
         //findAll()メソッドでデータベースからデータを取得
         var postList = postRepository.findAll();
